@@ -23,8 +23,12 @@ def get_imei():
 def get_csq():
     os.system('echo -e \'AT+CSQ\r\n\' > /dev/ttyUSB2')
 
+def get_iccid():
+    os.system('echo -e \'AT+MCCID\r\n\' > /dev/ttyUSB2')
+
 cat1_on()
 get_imei()
 get_csq()
+get_iccid()
 time.sleep(30)
 cat1_off()
